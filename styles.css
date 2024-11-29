@@ -1,0 +1,157 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+
+header {
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.menu-hamburger {
+    display: none; 
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+
+@media (max-width: 768px) {
+    .menu-hamburger {
+        display: block; 
+    }
+
+    nav ul {
+        display: none; 
+        flex-direction: column;
+        gap: 0;
+        background-color: #333;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    nav ul.active {
+        display: flex; 
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #555;
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+}
+
+
+.principal, .conteudo, .formulario {
+    padding: 20px;
+}
+
+.carrossel {
+    max-width: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 250px; 
+}
+
+.carrossel-container {
+    display: flex;
+}
+
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    max-width: 80%; 
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+
+button.prev, button.next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+
+@media (max-width: 1024px) {
+    .carrossel {
+        height: 200px;
+    }
+
+    .conteudo h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carrossel {
+        height: 180px;
+    }
+
+    .conteudo h2 {
+        font-size: 18px;
+    }
+}
